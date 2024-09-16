@@ -59,5 +59,34 @@
         });
     });
 
+    describe('Removing a duplicate from an array of sorted values', () => {
+        describe('removeSortedDuplicates', () => {
+            it('should return the index of the array to slice at', () => {
+                const arr1 = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+                expect(test.removeSortedDuplicates(arr1)).toEqual(5);
+                const arr2 = [0, 1, 2, 3, 4, 5];
+                expect(test.removeSortedDuplicates(arr2)).toEqual(6);
+                const arr3 = [0, 0, 0, 0, 0, 0];
+                expect(test.removeSortedDuplicates(arr3)).toEqual(1);
+                const arr4 = [0, 0, 0, 0, 0, 1];
+                expect(test.removeSortedDuplicates(arr4)).toEqual(2);
+            });
+            it('should slice at the given index and return unique array', () => {
+                const arr1 = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+                const index1 = test.removeSortedDuplicates(arr1);
+                expect(arr1.slice(0, index1)).toEqual([0, 1, 2, 3, 4]);
+                const arr2 = [0, 1, 2, 3, 4, 5];
+                const index2 = test.removeSortedDuplicates(arr2);
+                expect(arr2.slice(0, index2)).toEqual([0, 1, 2, 3, 4, 5]);
+                const arr3 = [0, 0, 0, 0, 0, 0];
+                const index3 = test.removeSortedDuplicates(arr3);
+                expect(arr3.slice(0, index3)).toEqual([0]);
+                const arr4 = [0, 0, 0, 0, 0, 1];
+                const index4 = test.removeSortedDuplicates(arr4);
+                expect(arr4.slice(0, index4)).toEqual([0, 1]);
+            });
+        });
+    });
+
 
 })();

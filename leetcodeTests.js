@@ -78,5 +78,24 @@
         return j;
     }
 
+    /**
+     * Removes duplicate values from an array in place
+     * Line up your cards, left hand on the first card.
+     * Scan right and compare right and left hand.
+     * If they are different, move the left hand one right and copy right card onto left.
+     * If they are the same, move right hand to the next card and repeat.
+     * Time is O(n)
+     */
+    test.removeSortedDuplicates = function(nums) {
+        let j = 0;
+        for (let i = 0; i < nums.length; i++) {
+            if (nums[i] != nums[j]) {
+                j++;
+                nums[j] = nums[i];
+            }
+        }
+        return j + 1;
+    }
+
 
 })();
