@@ -100,5 +100,18 @@
         });
     });
 
+    describe('Find the majority element', () => {
+        describe('majorityElement', () => {
+            it('should return the majority element', () => {
+                const array1 = [2, 2, 2, 1, 1, 1, 2, 2];
+                expect(test.majorityElement(array1)).toEqual(2);
+                const array2 = [1, 2, 3, 4, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+                expect(test.majorityElement(array2)).toEqual(1);
+                const array3 = [1, 0, 1];
+                expect(test.majorityElement(array3)).toEqual(1);
+            });
+        });
+    });
+
 
 })();
