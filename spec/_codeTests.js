@@ -113,5 +113,20 @@
         });
     });
 
+    describe('Rotate an array', () => {
+        describe('rotate', () => {
+            it('should rotate an array to the right by k steps, where k is non-negative', () => {
+                const array1 = [1, 2, 3, 4, 5, 6, 7];
+                expect(test.rotate(array1, 3)).toEqual([5, 6, 7, 1, 2, 3, 4]);
+                const array2 = [1];
+                expect(test.rotate(array2, 0)).toEqual([1]);
+                const array3 = [1, 2];
+                expect(test.rotate(array3, 3)).toEqual([2, 1]);
+                const array4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27];
+                expect(test.rotate(array4, 38)).toEqual([17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]);
+            });
+        });
+    });
+
 
 })();

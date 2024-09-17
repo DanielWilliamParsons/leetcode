@@ -135,5 +135,34 @@
         return candidate;
     }
 
+    /**
+     * Rotate array right by k steps
+     * e.g., [1, 2, 3, 4, 5, 6, 7], k = 3, expect [5, 6, 7, 1, 2, 3, 4]
+     * Reverse the whole array first. Then reverse the first k elements, then the final length - k elements
+     */
+    test.rotate = function(nums, k) {
+        let arrayEnd = nums.length - 1;
+
+        if (k > nums.length) {
+            k = k % nums.length;
+        }
+
+        const reverse = (arr, start, end) => {
+            let tmp;
+            while (start < end) {
+                tmp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = tmp;
+                start++;
+                end--;
+            }
+        };
+
+        reverse(nums, 0, arrayEnd);
+        reverse(nums, 0, k-1);
+        reverse(nums, k, arrayEnd);
+        return nums;
+    }
+
 
 })();
