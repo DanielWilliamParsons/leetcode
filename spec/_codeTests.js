@@ -86,6 +86,18 @@
                 expect(arr4.slice(0, index4)).toEqual([0, 1]);
             });
         });
+
+        describe('removeDuplicatesButTwo', () => {
+            it('should return the index of the array to slice at', () => {
+                const array1 = [0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4];
+                expect(test.removeDuplicatesButTwo(array1)).toEqual(9);
+            });
+            it('should slice at the given index and return the unique array', () => {
+                const array1 = [0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4];
+                const index = test.removeDuplicatesButTwo(array1);
+                expect((array1.slice(0, index))).toEqual([0, 0, 1, 1, 2, 2, 3, 3, 4]);
+            });
+        });
     });
 
 

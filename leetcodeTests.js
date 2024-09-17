@@ -97,5 +97,24 @@
         return j + 1;
     }
 
+    /**
+     * Removes duplicates from sorted array such that each unique element appears
+     * at least twice with relative order of elements preserved.
+     */
+    test.removeDuplicatesButTwo = function(nums) {
+        let n = nums.length;
+        if(n < 2) {
+            return n;
+        }
+        let j = 2;
+        for (let i = 2; i < n; i++) {
+            if (nums[i] != nums[j - 2]) {
+                nums[j] = nums[i];
+                j++;
+            }
+        }
+        return j;
+    }
+
 
 })();
