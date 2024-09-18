@@ -164,5 +164,20 @@
         return nums;
     }
 
+    test.BuySellStockProfit = function(prices) {
+        let n = prices.size();
+        let profit = 0;
+        let buyingPrice = prices[0];
+        for (let i = 1; i < n; i++){
+            if (prices[i] < buyingPrice) {
+                buyingPrice = prices[i];
+            } else {
+                profit = max(prices[i]- buyingPrice, profit); 
+            }
+                      
+        }
+        return profit;
+    }
+
 
 })();
