@@ -128,5 +128,22 @@
         });
     });
 
+    describe('Get maximum profit from buying and selling stock', () => {
+        describe('buySellStockProfit', () => {
+            it('should return a number that is the maximum profit', () => {
+                const array1 = [7, 1, 5, 3, 6, 4];
+                const array2 = [2, 4, 1];
+                const array3 = [1];
+                const array4 = [7, 2, 4, 1];
+                const array5 = [10, 9, 8, 7, 6, 5, 4, 3, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0];
+                expect(test.buySellStockProfit(array1)).toEqual(5);
+                expect(test.buySellStockProfit(array2)).toEqual(2);
+                expect(test.buySellStockProfit(array3)).toEqual(0);
+                expect(test.buySellStockProfit(array4)).toEqual(2);
+                expect(test.buySellStockProfit(array5)).toEqual(5);
+            });
+        });
+    });
+
 
 })();
